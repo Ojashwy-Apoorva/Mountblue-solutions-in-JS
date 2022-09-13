@@ -1,0 +1,21 @@
+function getMinimumCost(no_of_friends, arr) {
+     arr.sort(function (a, b) {
+    return b - a;
+  });
+  let result_1=0;  // min_cost;
+
+  if (arr.length == no_of_friends||arr.length<no_of_friends){
+    for (let i = 0; i < arr.length; i++) {
+      result_1 += arr[i];
+    }
+  }
+  //console.log(result_1);
+  else {
+    for (let i = 0;i<arr.length;i++) {
+        result_1=result_1+Math.floor(i/no_of_friends+1)*arr[i];
+    }
+  }
+ return result_1;
+
+
+}
