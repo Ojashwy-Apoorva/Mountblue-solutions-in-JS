@@ -1,0 +1,43 @@
+
+function isValid(s) {
+     let freq = [];
+  let str = s.split('');
+  console.log(str);
+  for (let i = 0; i < str.length; i++) {
+    let el = str[i];
+    if (freq[el]) {
+      freq[el]++;
+    } else {
+      freq[el] = 1;
+    }
+  }
+  console.log(freq);
+  let arr = [];
+  for (let ele in freq) {
+    arr.push(freq[ele]);
+  }
+  console.log(arr);
+
+  arr.sort(function (a, b) {
+    return a - b;
+  });
+  console.log(arr);
+  let first = arr[0];
+  let second = arr[1];
+  let secondLast = arr[arr.length - 2];
+  // console.log(secondLast);
+  let last = arr[arr.length - 1];
+
+  if(arr.length==1){ //when length==1
+      return "YES";
+  }
+    if(first==last){ //all are same
+        return "YES";
+    }
+    if(first==1&&second==last){ //one is 1 and another are same
+        return "YES";
+    }
+    if(first==second&&second==secondLast&&secondLast==last-1){ // all are same only one is higher than 1;
+        return "YES";
+    }
+    return "NO";
