@@ -1,0 +1,15 @@
+
+function decentNumber(n) {
+    // Write your code here
+let result=-1;
+    
+    for(let i=n; i>=0;){
+        if(i%3===0){
+            result="5".repeat(i)+"3".repeat(n-i);
+            break;
+        }
+        i-=5;
+    }
+   console.log(result);
+    
+}
