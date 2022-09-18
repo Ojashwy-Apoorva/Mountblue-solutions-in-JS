@@ -1,0 +1,19 @@
+function jumpingOnClouds(c) {
+    // Write your code here
+let jump = 0;
+    for (var i = 0; i < c.length;) {
+        if (c[i+2] == 0)
+        {
+            i = i+2
+            jump++
+        }
+        else {
+            i++
+            jump++
+        }
+        if (i == c.length-1){
+            return jump
+        }
+    }
+return jump
+}
