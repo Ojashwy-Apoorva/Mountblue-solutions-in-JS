@@ -1,0 +1,18 @@
+function workbook(n, k, arr) {
+    // Write your code here
+    let spacialPage=0;
+    let page=1;
+    let i=0;
+    while(i<n){
+        for(let index=1;index<=arr[i];index++){
+            if(index==page){
+                spacialPage++;
+               }
+            if(index==arr[i]||index%k==0){
+                page++;
+               }
+        }
+          i++;
+    }
+    return spacialPage;
+}
